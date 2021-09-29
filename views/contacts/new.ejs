@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-new">
+      <h2>등록하기</h2>
+      <form class="contact-form" action="/contacts" method="post">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="datestart">시작일</label>
+          <input type="text" id="datestart" name="datestart" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="dateend">종료일</label>
+          <input type="text" id="dateend" name="dateend" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="price">금액</label>
+          <input type="text" id="price" name="price" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="bill">계산서</label>
+          <select name="bill" id="bill" class="form-control">
+            <option value="발행">발행</option>
+            <option value="미발행">미발행</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="admin">담당자</label>
+          <input type="text" id="admin" name="admin" value="" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="text" id="phone" name="phone" value="" class="form-control">
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">저장</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

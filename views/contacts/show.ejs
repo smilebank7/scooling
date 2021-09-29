@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-show">
+      <h2>강사</h2>
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title"><%= contact.name%></h3>
+          <label>시작일</label><span><%= contact.datestart %></span>
+          <br>
+          <label>종료일</label><span><%= contact.dateend %></span>
+          <br>
+          <label>금액</label><span><%= contact.price %></span>
+          <br>
+          <label>계산서</label><span><%= contact.bill %></span>
+          <br>
+          <label>담당자</label><span><%= contact.admin %></span>
+          <br>
+          <label>연락처</label><span><%= contact.phone %></span>
+        </div>
+      </div>
+      <div class="contact-menu mt-2">
+        <a href="/contacts/<%= contact._id %>/edit" class="btn btn-light mr-2">수정</a>
+        <form action="/contacts/<%= contact._id %>?_method=delete" method="post">
+          <a href="#" class="btn btn-light" onclick="confirm('Do you want to delete this?')?this.parentElement.submit():null;">삭제</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-edit">
+      <h2>수정</h2>
+      <form class="contact-form" action="/contacts/<%= contact._id %>?_method=put" method="post">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" value="<%= contact.name %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="datestart">시작일</label>
+          <input type="text" id="datestart" name="datestart" value="<%= contact.datestart %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="dateend">종료일</label>
+          <input type="text" id="dateend" name="dateend" value="<%= contact.dateend %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="price">금액</label>
+          <input type="text" id="price" name="price" value="<%= contact.price %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="bill">계산서</label>
+          <input type="text" id="bill" name="bill" value="<%= contact.bill %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="admin">담당자</label>
+          <input type="text" id="admin" name="admin" value="<%= contact.admin %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="phone">연락처</label>
+          <input type="text" id="phone" name="phone" value="<%= contact.phone %>" class="form-control">
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary">저장</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

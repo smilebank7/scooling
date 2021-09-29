@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">이름</th>
+          <th scope="col">날짜(시작일)</th>
+          <th scope="col">날짜(종료일)</th>
+          <th scope="col">가격</th>
+          <th scope="col">계산서</th>
+          <th scope="col">담당자</th>
+          <th scope="col">연락처</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% contacts.forEach(function(contact) { %>
+        <tr>
+          <td></td>
+          <td><a href="/contacts/<%= contact._id %>"><%= contact.name %></a></td>
+          <td><%= contact.datestart %></td>
+          <td style="color:red"><%= contact.dateend %></td>
+          <td><%= contact.price %></td>
+          <td><%= contact.bill %></td>
+          <td><%= contact.admin %></td>
+          <td><%= contact.phone %></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>

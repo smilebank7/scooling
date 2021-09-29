@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-index">
+      <h2>회원</h2>
+      <ul class="list-group">
+        <% contacts.forEach(function(contact) { %>
+          <table class="list-group-item">
+            <tr>
+              <td>
+                <a href="/contacts/<%= contact._id %>"><%= contact.name %></a>
+              </td>
+              <td>
+                |<%= contact.datestart %>
+              </td>
+              <td>
+                |<%= contact.dateend %>
+              </td>
+              <td>
+                |<%= contact.price %>
+              </td>
+              <td>
+                |<%= contact.bill %>
+              </td>
+              <td>
+                |<%= contact.admin %>
+              </td>
+              <td>
+                |<%= contact.phone %>
+              </td>
+            </tr>
+          </table>
+        <% }) %>
+      </ul>
+    </div>
+  </body>
+</html>
